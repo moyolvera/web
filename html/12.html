@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practica</title>
+	<style type="text/css">
+		#contenedor-principal{
+			height: 300px;
+		}
+		.contenedores{
+			width: 33%;
+			display: inline-block;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<div>
+			<h2>A usar los elementos</h2>
+			<a href="facebook.com">A face por mientras</a>	
+		</div>
+		<div id="contenedor-principal">
+			<div class="contenedores">
+				<h3>Lista de elementos</h3>
+				<p>Aqui hay una lista de elementos, con diferente nivel en ellos</p>
+				<ul>
+					<li>
+						Elemento 1
+					</li>
+					<li>
+						Elemento 2
+					</li>
+					<li>
+						Elemento 3
+					</li>
+					<ul>
+						<li>
+							SubElemnto 1 de 3
+						</li>
+						<li>
+							SubElemnto 2 de 3
+						</li>
+						<ul>
+							<li>
+								Sub Sub Elemnto 1 de 2 de 3
+							</li>
+							<li>
+								Sub Sub Elemnto 2 de 2 de 3
+							</li>
+						</ul>
+					</ul>
+					<li>
+						Elemento 4
+					</li>
+					<ul>
+						<li>
+							SubElemento 1 de 4
+						</li>
+					</ul>
+					<li>
+						Elemento 5
+					</li>
+					<li>
+						<img src="https://image.flaticon.com/icons/png/128/59/59252.png" width="100">
+					</li>
+				</ul>
+			</div>
+			<div class="contenedores">
+				<table border="1" width="350" align="center">
+					<caption>Un titulillo ahi nomas</caption>
+					<thead align="center">
+						<th>
+							Titulo 1
+						</th>
+						<th>
+							Titulo 2
+						</th>
+						<th>
+							Titulo 3
+						</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Celda 1</td>
+							<td>Celda 2</td>
+							<td>Celda 3</td>
+						</tr>
+						<tr>
+							<td colspan="3"> Celda unida </td>
+						</tr>
+						<tr>
+							<td>Celda 1</td>
+							<td>Celda 2</td>
+							<td>Celda 3</td>
+						</tr>
+						<tr>
+							<td colspan="2"> Celda unida </td>
+							<td>Celda sola</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="3">Este es el footer</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+			<div class="contenedores">
+				<form action="" method="post">
+					<span>
+		  				<label for="nombre">Tu nombre?</label><br>
+		  				<input type="text" name="nombre" id="nombre">
+		  			</span><br>
+		  			<span>
+		  				<label for="contrasena">Tu contraseña?</label><br>
+		  				<input type="password" name="contrasena" id="contrasena">
+		  			</span><br>
+		  			<span>
+		  			<label for="sexo">Tu sexo?</label><br>
+			  			<select name="sexo" id="sexo">
+			  				<option disabled selected>Selecciona</option>
+			  				<option>Mujer</option>
+			  				<option>Hombre</option>
+			  				<option>Otro</option>
+			  			</select>
+		  			</span>
+		  			<p>Selecciona un radio</p>
+					<span>
+						<label for="uno">Este es un label 1</label>
+			  			<input type="radio" name="uno" id="uno" value="uno">
+			  			<label for="dos">Este es un label 2</label>
+			  			<input type="radio" name="uno" id="dos" value="dos"><br>
+			  			<label for="tres">Este es un label 3</label>
+			  			<input type="radio" name="uno" id="tres" value="tres">
+			  			<label for="cuatro">Este es un label 4</label>
+			  			<input type="radio" name="uno" id="cuatro" value="cuatro">
+					</span><br><br>
+		  			<span>
+		  				<label for="comentario">Algun comentario</label><br>
+		  				<textarea id="comentario" name="comentario"></textarea>
+		  			</span><br>
+		  			<input type="submit" name="submit" value="Aceptar y continuar">
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
