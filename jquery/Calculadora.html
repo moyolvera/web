@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejemplo de JQuery</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<style type="text/css">
+		body {
+		background: url(http://www.inkspilldesign.com/demo/wood-tile-background.jpg);
+		background-color: #424242;
+		font-family: Tahoma;
+	}
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+		width: 100vw;
+	}
+	#container {
+		width: 230px;
+		padding: 8px 8px 20px 8px;
+		margin: 20px auto;
+		background-color: #ABABAB;
+		border-radius: 4px;
+		border-top: 2px solid #FFF;
+		border-right: 2px solid #FFF;
+		border-bottom: 2px solid #C1C1C1;
+		border-left: 2px solid #C1C1C1;
+		box-shadow: -3px 3px 7px rgba(0, 0, 0, .6), inset -100px 0px 100px rgba(255, 255, 255, .5);
+	}
+	#display {
+		display: block;
+		margin: 15px auto;
+		height: 42px;
+		width: 174px;
+		padding: 0 10px;
+		border-radius: 4px;
+		border-top: 2px solid #C1C1C1;
+		border-right: 2px solid #C1C1C1;
+		border-bottom: 2px solid #FFF;
+		border-left: 2px solid #FFF;
+		background-color: #FFF;
+		box-shadow: inset 0px 0px 10px #030303, inset 0px -20px 1px rgba(150, 150, 150, .2);
+		font-size: 28px;
+		color: #666;
+		text-align: right;
+		font-weight: 400;
+	}
+	.button {
+		display: inline-block;
+		margin: 2px;
+		width: 42px;
+		height: 42px;
+		font-size: 16px;
+		font-weight: bold;
+		border-radius: 4px;
+	}
+	.mathButtons {
+		margin: 2px 2px 6px 2px;
+		color: #FFF;
+		text-shadow: -1px -1px 0px #44006F;
+		background-color: #434343;
+		border-top: 2px solid #C1C1C1;
+		border-right: 2px solid #C1C1C1;
+		border-bottom: 2px solid #181818;
+		border-left: 2px solid #181818;
+		box-shadow: 0px 0px 2px #030303, inset 0px -20px 1px #2E2E2E;
+	}
+	.digits {
+		color: #181818;
+		text-shadow: 1px 1px 0px #FFF;
+		background-color: #EBEBEB;
+		border-top: 2px solid #FFF;
+		border-right: 2px solid #FFF;
+		border-bottom: 2px solid #C1C1C1;
+		border-left: 2px solid #C1C1C1;
+		border-radius: 4px;
+		box-shadow: 0px 0px 2px #030303, inset 0px -20px 1px #DCDCDC;
+	}
+	.digits:hover,
+	.mathButtons:hover,
+	#clearButton:hover {
+		background-color: #FFBA75;
+		box-shadow: 0px 0px 2px #FFBA75, inset 0px -20px 1px #FF8000;
+		border-top: 2px solid #FFF;
+		border-right: 2px solid #FFF;
+		border-bottom: 2px solid #AE5700;
+		border-left: 2px solid #AE5700;
+	}
+	#clearButton {
+		color: #FFF;
+		text-shadow: -1px -1px 0px #44006F;
+		background-color: #D20000;
+		border-top: 2px solid #FF8484;
+		border-right: 2px solid #FF8484;
+		border-bottom: 2px solid #800000;
+		border-left: 2px solid #800000;
+		box-shadow: 0px 0px 2px #030303, inset 0px -20px 1px #B00000;
+	}
+	</style>
+</head>
+<body>
+<div class="container">
+	<fieldset id="container">
+		<form name="calculator">
+
+			<input id="display" type="text" name="display" readonly>
+
+			<input class="button digits" type="button" value="7" id="7">
+			<input class="button digits" type="button" value="8" id="8">
+			<input class="button digits" type="button" value="9" id="9">
+			<input class="button mathButtons" type="button" value="+" id="suma">
+			<br>
+			<input class="button digits" type="button" value="4" id="4">
+			<input class="button digits" type="button" value="5" id="5">
+			<input class="button digits" type="button" value="6" id="6">
+			<input class="button mathButtons" type="button" value="-" id="resta">
+			<br>
+			<input class="button digits" type="button" value="1" id="1">
+			<input class="button digits" type="button" value="2" id="2">
+			<input class="button digits" type="button" value="3" id="3">
+			<input class="button mathButtons" type="button" value="*" id="multiplicacion">
+			<br>
+			<input id="clearButton" class="button" type="button" value="C">
+			<input class="button digits" type="button" value="0" id="zero">
+			<input class="button mathButtons" type="button" value="=" id="igual">
+			<input class="button mathButtons" type="button" value="/" id="division">
+		</form>
+	</fieldset>
+</div>
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+<script>
+	$(function(){
+		let valor;
+		$('#1').click(function(){
+			valor = $('#display').val();
+			$('#display').val(valor + '1');
+		});
+		$('#2').click(function(){
+			valor = $('#display').val();
+			$('#display').val(valor + '2');
+		});
+		$('#3').click(function(){
+			valor = $('#display').val();
+			$('#display').val(valor + '3');
+		});
+		$('#4').click(function(){
+			valor = $('#display').val();
+			$('#display').val(valor + '4');
+		});
+		$('#5').click(function(){
+			valor = $('#display').val();
+			$('#display').val(valor + '5');
+		});
+		$('#6').click(function(){
+			valor = $('#display').val();
+			$('#display').val(valor + '6');
+		});	
+		$('#7').click(function(){
+			valor = $('#display').val();
+			$('#display').val(valor + '7');
+		});
+		$('#8').click(function(){
+			valor = $('#display').val();
+			$('#display').val(valor + '8');
+		});
+		$('#9').click(function(){
+			valor = $('#display').val();
+			$('#display').val(valor + '9');
+		});
+		$('#suma').click(function(){
+			valor = $('#display').val();
+			$('#display').val(valor + '+');
+		});
+		$('#resta').click(function(){
+			valor = $('#display').val();
+			$('#display').val(valor + '-');
+		});
+		$('#multiplicacion').click(function(){
+			valor = $('#display').val();
+			$('#display').val(valor + '*');
+		});
+		$('#division').click(function(){
+			valor = $('#display').val();
+			$('#display').val(valor + '/');
+		});
+		$('#zero').click(function(){
+			valor = $('#display').val();
+			$('#display').val(valor + '0');
+		});
+		$('#igual').click(function(){
+			$('#display').val(eval($('#display').val()));
+			let value = $('#display').val();
+			$('#display').val(eval(value));
+		});
+		$('#clearButton').click(function(){
+			$('#display').val('');
+		});
+	});
+</script>
+</body>
+</html>
